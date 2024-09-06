@@ -65,7 +65,9 @@ class _LogarteFABState extends State<_LogarteFAB> {
 
   Future<void> _onPressed() async {
     if (_isOpened) {
-      Navigator.of(context).pop();
+      Navigator.of(context).popUntil(ModalRoute.withName('/logarte_auth'));
+      
+      Future.delayed(Duration(milliseconds: 800),(){  Navigator.of(context).pop();});
     } else {
       Navigator.of(context).push<void>(
         MaterialPageRoute(
